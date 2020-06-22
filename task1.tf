@@ -130,8 +130,7 @@ provisioner "remote-exec" {
       "sudo mkfs.ext4  /dev/xvdh",
       "sudo mount  /dev/xvdh  /var/www/html",
       "sudo rm -rf /var/www/html/*",
-      "sudo git clone https://github.com/neerajsinghnegi/testingdata.git /var/www/html/",
-	  "sudo setenforce 0"
+      "sudo git clone https://github.com/neerajsinghnegi/testingdata.git /var/www/html/"
     ]
   }
 }
