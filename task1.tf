@@ -112,7 +112,7 @@ depends_on = [
   force_detach = true
 }
 
-# ebs mount /var/www/html (webserver)
+# ebs volume link
 resource "null_resource" "mount-web-file"  {
 depends_on = [
     aws_volume_attachment.tf_ebs_attach,
