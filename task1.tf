@@ -294,6 +294,17 @@ resource "null_resource" "update-url" {
       value = aws_instance.tf_instance.public_ip
   }
 
+# create ebs snapshot
+resource "aws_ebs_snapshot" "ec2_tf_snapshot" {
+depends_on = [
+          null_resource.update-url
+  ]
+  volume_id = aws_ebs_volume.tf_ebs_vol.id
+  tags = {
+    Name = "ebs_tf_snap"
+  }
+}
+
 # automatic website opens
 resource "null_resource" "open-automatic-site" {
       depends_on = [
